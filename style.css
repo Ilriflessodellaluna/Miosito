@@ -101,13 +101,6 @@ ul li::before {
   position: relative;
 }
 
-.ebook-wrapper::before {
-  content: "🌙";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 /* LINK */
 a {
   color: #d2bfff;
