@@ -74,3 +74,17 @@ footer {
   padding: 1em;
   font-size: 0.9em;
 }
+
+@media (max-width: 600px) {
+  .overlay h1 {
+    font-size: 2em;
+  }
+
+  .overlay p {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 2em 1em;
+  }
+}
