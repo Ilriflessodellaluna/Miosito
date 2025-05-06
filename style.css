@@ -5,32 +5,37 @@
   box-sizing: border-box;
 }
 
-/* BACKGROUND OVERLAY SU TUTTO IL SITO */
+/* SFONDO LUNARE CON SFUMATURA MAGICA */
+body {
+  position: relative;
+  z-index: 0;
+  font-family: 'Georgia', serif;
+  color: #e0d6f9;
+
+  background-image: url('sfondo3.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* OVERLAY SFUMATO */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* effetto scuro su tutto il sito */
-  z-index: -1; /* dietro a tutto */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(131, 81, 172, 0.3),   /* viola lunare chiaro */
+    rgba(33, 17, 60, 0.6),     /* indaco profondo */
+    rgba(0, 0, 0, 0.8)         /* nero trasparente in basso */
+  );
+  z-index: -1;
 }
 
-/* BODY */
-body {
-  background-color: #1a1a1a;
-  background-image: url('sfondo3.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  color: #e0d6f9;
-  font-family: 'Georgia', serif;
-  position: relative; /* serve per il ::before */
-  z-index: 0;
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero {
   background: url('https://images.unsplash.com/photo-1606836591163-6f6dffccc25b') no-repeat center center/cover;
   height: 100vh;
@@ -38,8 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #d3bff7;
   padding: 0 1em;
+  color: #d3bff7;
 }
 
 .hero h1 {
@@ -61,7 +66,7 @@ section {
 }
 
 .about, .services, .contact {
-  background-color: #2a2a2a;
+  background-color: rgba(42, 42, 42, 0.85); /* leggermente trasparente per far vedere la sfumatura */
   border-left: 5px solid #a57be1;
   margin-top: 1.5em;
   border-radius: 5px;
@@ -137,3 +142,4 @@ footer {
     padding: 2em 1em;
   }
 }
+
